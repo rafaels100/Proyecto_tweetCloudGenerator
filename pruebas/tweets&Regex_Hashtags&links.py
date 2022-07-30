@@ -90,8 +90,7 @@ emojis_str = " ".join([" ".join(lista) for lista in emojis if lista != []])
 #podemos combinar todos estos approach y conseguir una string con todos los
 #emojis directamente, sin necesidad de conseguir primero una lista de listas
 #de emojis:
-emojis_str_final = " ".join([" ".join([match.group(0) for match in pattern.finditer(text)])
-                             for text in text_tweets if sum(1 for match in pattern.finditer(text)) != 0])
+emojis_str_final = " ".join([" ".join([match.group(0) for match in pattern.finditer(text)]) for text in text_tweets if sum(1 for match in pattern.finditer(text)) != 0])
 ##print(emojis_str_final)
 
 
@@ -129,8 +128,7 @@ no special characters. Only 30 hashtags are allowed in each post
 """
 ##print("hashtags")
 pattern = re.compile(r"#[a-zA-Z0-9_]+")
-hastag_str_final = " ".join([" ".join([match.group(0) for match in pattern.finditer(text)])
-                             for text in text_tweets if sum(1 for match in pattern.finditer(text)) != 0])
+hastag_str_final = " ".join([" ".join([match.group(0) for match in pattern.finditer(text)]) for text in text_tweets if sum(1 for match in pattern.finditer(text)) != 0])
 ##print(hastag_str_final)
 
 
@@ -152,8 +150,7 @@ plt.show()
 #los links empiezan con https:// y pueden tener letras, puntos, /, pero no ' ni ,.
 ##print("links")
 pattern = re.compile(r"https?://[a-zA-Z0-p./]+")
-links_str_final = " ".join([" ".join([match.group(0) for match in pattern.finditer(text)])
-                            for text in text_tweets if sum(1 for match in pattern.finditer(text)) != 0])
+links_str_final = " ".join([" ".join([match.group(0) for match in pattern.finditer(text)]) for text in text_tweets if sum(1 for match in pattern.finditer(text)) != 0])
 ##print(links_str_final)
 
 
